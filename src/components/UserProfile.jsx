@@ -1,13 +1,13 @@
 import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 
-import { Button } from '.';
+import Button from './Button';
 import { userProfileData } from '../data/dummy';
 import { useStateContext } from '../contexts/ContextProvider';
 import avatar from '../data/avatar.jpg';
 
 const UserProfile = () => {
-  const { currentColor } = useStateContext();
+  const { currentColor, role, setAppRole } = useStateContext();
 
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
@@ -50,6 +50,20 @@ const UserProfile = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-4">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="text-sm text-gray-500">Role:</span>
+          <select
+            value={role}
+            onChange={(e) => setAppRole(e.target.value)}
+            className="px-2 py-1 rounded-md bg-white/80 dark:bg-zinc-800/60 border border-gray-200 dark:border-zinc-700"
+          >
+            <option value="admin">admin</option>
+            <option value="manager">manager</option>
+            <option value="viewer">viewer</option>
+          </select>
+        </div>
       </div>
       <div className="mt-5">
         <Button

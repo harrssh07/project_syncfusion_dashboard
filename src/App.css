@@ -1,11 +1,24 @@
 @import url('https://cdn.syncfusion.com/ej2/material.css');
 
 .sidebar {
-  box-shadow: rgb(113 122 131 / 11%) 0px 7px 30px 0px;
+  box-shadow: rgb(113 122 131 / 14%) 0px 8px 32px 0px;
+  border-radius: 12px;
 }
 .nav-item,
 .navbar {
   z-index: 10000;
+}
+.dark .sidebar {
+  box-shadow: rgb(0 0 0 / 35%) 0px 8px 32px 0px;
+}
+.navbar {
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  box-shadow: rgb(113 122 131 / 10%) 0px 1px 6px 0px;
+  background-color: rgba(255, 255, 255, 0.65);
+}
+.dark .navbar {
+  background-color: rgba(24, 24, 27, 0.6);
 }
 @media  screen and (max-width:800px) {
   .sidebar{
@@ -17,12 +30,17 @@
   z-index: 1000000 !important;
 }
 
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(216, 216, 216);
-  border-radius: 40px;
+  background-color: rgb(210, 210, 210);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(190, 190, 190);
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;

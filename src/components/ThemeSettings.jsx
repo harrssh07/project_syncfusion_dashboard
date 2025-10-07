@@ -11,23 +11,23 @@ const ThemeSettings = () => {
 
   return (
     <div className="bg-half-transparent w-screen fixed nav-item top-0 right-0">
-      <div className="float-right h-screen dark:text-gray-200  bg-white dark:bg-[#484B52] w-400">
-        <div className="flex justify-between items-center p-4 ml-4">
+      <div className="float-right h-screen dark:text-gray-200 bg-white/90 dark:bg-[#2c2f36]/90 backdrop-blur-md w-400 rounded-l-2xl shadow-2xl">
+        <div className="flex justify-between items-center p-4 ml-4 border-b border-gray-100/70 dark:border-zinc-700/60">
           <p className="font-semibold text-lg">Settings</p>
           <button
             type="button"
             onClick={() => setThemeSettings(false)}
             style={{ color: 'rgb(153, 171, 180)', borderRadius: '50%' }}
-            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray"
+            className="text-2xl p-3 hover:drop-shadow-xl hover:bg-light-gray transition-colors duration-200"
           >
             <MdOutlineCancel />
           </button>
 
         </div>
-        <div className="flex-col border-t-1 border-color p-4 ml-4">
+        <div className="flex-col border-b border-gray-100/70 dark:border-zinc-700/60 p-4 ml-4">
           <p className="font-semibold text-xl ">Theme Option</p>
 
-          <div className="mt-4">
+          <div className="mt-4 flex items-center gap-3">
             <input
               type="radio"
               id="light"
@@ -42,7 +42,7 @@ const ThemeSettings = () => {
               Light
             </label>
           </div>
-          <div className="mt-2">
+          <div className="mt-2 flex items-center gap-3">
             <input
               type="radio"
               id="dark"
@@ -58,9 +58,9 @@ const ThemeSettings = () => {
             </label>
           </div>
         </div>
-        <div className="p-4 border-t-1 border-color ml-4">
+        <div className="p-4 ml-4">
           <p className="font-semibold text-xl ">Theme Colors</p>
-          <div className="flex gap-3">
+          <div className="flex flex-wrap gap-3">
             {themeColors.map((item, index) => (
               <TooltipComponent key={index} content={item.name} position="TopCenter">
                 <div
@@ -69,7 +69,7 @@ const ThemeSettings = () => {
                 >
                   <button
                     type="button"
-                    className="h-10 w-10 rounded-full cursor-pointer"
+                    className="h-10 w-10 rounded-full cursor-pointer border-2 border-transparent hover:border-white/70 shadow-md"
                     style={{ backgroundColor: item.color }}
                     onClick={() => setColor(item.color)}
                   >
